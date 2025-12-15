@@ -77,15 +77,15 @@
   --sidebar-accent-foreground: oklch(0.208 0.042 265.755);
   --sidebar-border: oklch(0.929 0.013 255.508);
   --sidebar-ring: oklch(0.704 0.04 256.788);
-  --gas: #292524;
-  --coal: #0c0a09;
-  --biomass: #166534;
-  --nuclear: #059669;
-  --hydro: #0891b2;
-  --imports: #ef4444;
-  --other: #a855f7;
-  --wind: #cffafe;
-  --solar: #fde047;
+  --gas: #692b0c;
+  --coal: #040303;
+  --biomass: #42a32f;
+  --nuclear: #39be92;
+  --hydro: #2690c9;
+  --imports: #dc2626;
+  --other: #7e22ce;
+  --wind: #bae6fd;
+  --solar: #fcd34d;
 }
 
 .dark {
@@ -120,15 +120,6 @@
   --sidebar-accent-foreground: oklch(0.984 0.003 247.858);
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.551 0.027 264.364);
-  --gas: #1c1a19;
-  --coal: #040303;
-  --biomass: #14532d;
-  --nuclear: #047857;
-  --hydro: #0369a1;
-  --imports: #dc2626;
-  --other: #7e22ce;
-  --wind: #bae6fd;
-  --solar: #fcd34d;
 }
 
 @layer base {
