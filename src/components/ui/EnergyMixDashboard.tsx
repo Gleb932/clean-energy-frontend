@@ -49,18 +49,21 @@ export default function EnergyDashboard() {
 
 
   return (
-    <div className="flex">
-      {
-        data.map( (dayMix, index) => (
-          <EnergyPieChart
-            key={index}
-            className="flex-1"
-            entries = {dayMix.entries}
-            cleanEnergy={parseFloat(dayMix.cleanEnergy.toFixed(2))}
-            title={dateToFormattedLocaleStr(localDateToDate(dayMix.date))}
-          />
-        ))
-      }
+    <div className="bg-muted rounded p-4">
+      <h2 className="text-2xl font-semibold mb-4">Energy mix summary</h2>
+      <div className="flex flex-row flex-1">
+        {
+          data.map( (dayMix, index) => (
+            <EnergyPieChart
+              key={index}
+              className="flex-1"
+              entries = {dayMix.entries}
+              cleanEnergy={parseFloat(dayMix.cleanEnergy.toFixed(2))}
+              title={dateToFormattedLocaleStr(localDateToDate(dayMix.date))}
+            />
+          ))
+        }
+      </div>
     </div>
   )
 }

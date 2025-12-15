@@ -4,7 +4,7 @@ import { ChargingWidget } from '@/features/charging/ChargingWidget'
 
 function App() {
   return (
-    <div color='var(--color-background)'>
+    <div className="items-center space-y-8 w-full">
       <EnergyMixDashboard/>
       <ChargingWidget/>
     </div>

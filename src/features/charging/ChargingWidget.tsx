@@ -37,12 +37,12 @@ function ChargingWidget() {
   }
 
   return (
-    <>
+    <div className='flex flex-col items-center bg-muted shadow rounded-lg p-4 space-y-4'>
       <ChargingForm value={chargingHours} onValueChange={setHours} onSubmit={onSubmit}/>
       { loading && <div>Loading...</div>}
       { error && <div>Error: {error}</div>}
       { response && <ChargingResult chargingResponse={response}/> }
-    </>
+    </div>
   )
 }
 

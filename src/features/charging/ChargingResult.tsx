@@ -7,14 +7,17 @@ type Props = {
 
 function ChargingResult({chargingResponse}: Props) {
     return (
-        <>
-            <p>Cleanest charging window: {
-                instantToFormattedLocaleStr(chargingResponse.start)
-            } - {
-                instantToFormattedLocaleStr(chargingResponse.end)
-            }</p>
-            <p>Clean energy: {parseFloat(chargingResponse.cleanEnergy.toFixed(2))}%</p>
-        </>
+        <div className="flex flex-col flex-wrap w-fit text-left bg-card shadow rounded-lg p-4 space-y-4">
+            <p className="text-base font-medium">
+                Cleanest charging window:
+                <span className="font-semibold text-primary">
+                    {" "}{instantToFormattedLocaleStr(chargingResponse.start)} - {instantToFormattedLocaleStr(chargingResponse.end)}
+                </span>
+            </p>
+            <p className="text-base font-medium">
+                Clean energy: <span className="font-semibold text-green-400">{parseFloat(chargingResponse.cleanEnergy.toFixed(2))}%</span>
+            </p>
+        </div>
     )
 }
 
