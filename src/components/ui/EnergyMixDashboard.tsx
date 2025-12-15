@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import EnergyPieChart from "@/components/ui/EnergyPieChart";
+import { dateToFormattedLocaleStr, localDateToDate } from "@/lib/date";
 const API_URL = import.meta.env.VITE_API_URL;
 
 type EnergyMixEntry = {
@@ -13,12 +14,6 @@ type EnergyMix = {
   cleanEnergy: number
 };
 
-const dateOptions = {
-  year: "numeric",
-  month: "2-digit",
-  day: "numeric",
-} as const
-
 export default function EnergyDashboard() {
   const [data, setData] = useState<EnergyMix[] | null>(null);
   const [loading, setLoading] = useState(true);
@@ -26,6 +21,9 @@ export default function EnergyDashboard() {
 
   useEffect(() => {
     const fetchData = async () => {
+      setError(null)
+      setLoading(true)
+      setData(null)
       try {
         const res = await fetch(API_URL + "/energy-mix/summary");
         if (!res.ok) throw new Error(`HTTP ${res.status}`);
@@ -59,7 +57,7 @@ export default function EnergyDashboard() {
             className="flex-1"
             entries = {dayMix.entries}
             cleanEnergy={parseFloat(dayMix.cleanEnergy.toFixed(2))}
-            title={new Date(dayMix.date + 'T00:00:00.000Z').toLocaleDateString('en-GB', dateOptions)}
+            title={dateToFormattedLocaleStr(localDateToDate(dayMix.date))}
           />
         ))
       }
