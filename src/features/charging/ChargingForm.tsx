@@ -25,10 +25,10 @@ function ChargingForm({
                 className='flex-none max-w-16'
                 type='number'
                 min={1}
-                max={24}
+                max={6}
                 step={1}
                 value={value}
-                onChange={(e) => onValueChange(Math.min(24, Math.max(1, parseInt(e.target.value, 10))))}
+                onChange={(e) => onValueChange(Math.min(6, Math.max(1, parseInt(e.target.value, 10))))}
             />
           </div>
         <Button className='self-center' type='submit'>Calculate</Button>
