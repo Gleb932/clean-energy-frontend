@@ -1,5 +1,5 @@
 import './App.css'
-import EnergyMixDashboard from '@/components/ui/EnergyMixDashboard'
+import EnergyMixDashboard from '@/features/energy-mix/EnergyMixDashboard'
 import { ChargingWidget } from '@/features/charging/ChargingWidget'
 
 function App() {

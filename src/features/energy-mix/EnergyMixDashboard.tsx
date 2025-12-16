@@ -1,18 +1,8 @@
 import { useEffect, useState } from "react";
-import EnergyPieChart from "@/components/ui/EnergyPieChart";
+import EnergyPieChart from "./EnergyPieChart";
 import { dateToFormattedLocaleStr, localDateToDate } from "@/lib/date";
+import type { EnergyMix } from "./types";
 const API_URL = import.meta.env.VITE_API_URL;
-
-type EnergyMixEntry = {
-  fuel: string;
-  percentage: number;
-}
-
-type EnergyMix = {
-  date: string,
-  entries: EnergyMixEntry[],
-  cleanEnergy: number
-};
 
 export default function EnergyDashboard() {
   const [data, setData] = useState<EnergyMix[] | null>(null);
