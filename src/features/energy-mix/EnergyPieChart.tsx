@@ -32,7 +32,7 @@ export default function EnergyPieChart({
     return (
         <div className={cn("w-fit", className)}>
             <div>Clean: {cleanEnergy}%</div>
-            <ChartContainer config={chartConfig} className="min-h-24 max-h-64 w-full aspect-square">
+            <ChartContainer config={chartConfig} className="min-h-40 max-h-64 w-full aspect-square">
                 <PieChart>
                     <ChartTooltip content={<ChartTooltipContent />} />
                     <Pie data={entries} dataKey="percentage" nameKey="fuel">

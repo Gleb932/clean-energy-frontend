@@ -41,7 +41,7 @@ export default function EnergyDashboard() {
   return (
     <div className="bg-muted rounded p-4">
       <h2 className="text-2xl font-semibold mb-4">Energy mix summary</h2>
-      <div className="flex flex-row flex-1">
+      <div className="flex flex-row flex-wrap">
         {
           data.map( (dayMix, index) => (
             <EnergyPieChart
