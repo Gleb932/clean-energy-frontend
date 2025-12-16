@@ -30,9 +30,9 @@ export default function EnergyPieChart({
     className,
 }: Props) {
     return (
-        <div className={cn("w-fit flex flex-col justify-center", className)}>
+        <div className={cn("flex flex-col justify-center items-center", className)}>
             <div>Clean: {cleanEnergy}%</div>
-            <ChartContainer config={chartConfig} className="min-h-40 max-h-64 flex-1 aspect-square">
+            <ChartContainer config={chartConfig} className="min-h-40 max-h-64 w-full aspect-square">
                 <PieChart>
                     <ChartTooltip content={<ChartTooltipContent />} />
                     <Pie data={entries} dataKey="percentage" nameKey="fuel">
